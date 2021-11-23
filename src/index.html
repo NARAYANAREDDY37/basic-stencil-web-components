@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>StencilWebComponents</title>
+    <link rel="stylesheet" href="/build/stenciwebcomponents.css" />
+    <script type="module" src="/build/stenciwebcomponents.esm.js"></script>
+    <script nomodule src="/build/stenciwebcomponents.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h3>Modal</h3>
+      </div>
+      <div class="row space-between">
+        <my-button btn-text="Open Modal" btn-color="white" btn-bg-color="violet"></my-button>
+        <my-modal header="Modal Header" buttons='[{"text": "Confirm", "color":"blue"}, {"text": "Cancel", "color":"red"}]'
+          >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa repellat cupiditate distinctio reiciendis alias, delectus dicta sint unde excepturi, quae provident modi
+          quisquam magnam iste possimus asperiores tempora in. Error enim, facere est ratione eum atque ullam praesentium molestiae, pariatur aut deleniti maiores laboriosam
+          tempora, quae vel ab placeat delectus!</my-modal
+        >
+      </div>
+    </div>
+  </body>
+
+  <script>
+    var customBtn = document.querySelector('my-button');
+    var customModal = document.querySelector('my-modal');
+
+    customBtn.addEventListener('click', function () {
+      // console.log(customModal.isopen);
+      customModal.isopen = true;
+    });
+
+    customModal.addEventListener('action', function () {
+      console.log('Confirm is clicked');
+    });
+  </script>
+</html>
