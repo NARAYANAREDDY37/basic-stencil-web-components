@@ -15,6 +15,10 @@ export class MyButton {
     this.checked.emit(event);
   }
 
+  public componentDidLoad() {
+    console.log('component is loaded!');
+  }
+
   render() {
     const styles: { [s: string]: string } = {
       'color': this.btnColor,
